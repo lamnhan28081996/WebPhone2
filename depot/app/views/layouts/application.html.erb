@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Depot</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+<body id="store">
+    <div id="banner">
+        <%= @page_title || "SAM SUNG" %>
+    </div>
+    <div id="columns">
+        <div id="side">
+          <ul>
+            <li><a href="http://localhost:3000/">Home</a></li>
+            <li><a href="http://localhost:3000/products">Product</a></li>
+          </ul>
+        </div>
+        <div id="main">
+            <%= yield %>
+        </div>
+    </div> 
+</body>
+</html>
