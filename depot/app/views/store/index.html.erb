@@ -1,10 +1,27 @@
+<!--                          ham tim kiem                          --> 
+
+ <%= search_form_for @search do |form| %>
+    <div class="field">
+      <%= form.label :title_cont, "Name containt" %>
+      <%= form.text_field :title_cont %>
+    </div>
+    <div class="field">
+        <%= form.label :price_gteq, "Price between" %>
+        <%= form.text_field :price_gteq %>
+        <%= form.label :price_lteq, "and" %>
+        <%= form.text_field :price_lteq %>
+    </div>
+      <div class="actions"><%= form.submit "Search" %></div>
+<% end %>  
+
+<!--                          show du lieu                         -->
+
 <% if notice %>
    <p id="notice"><%= notice %></p>
 <% end %>
  
-<h1>Product List</h1>
+<h1>San Pham SAMSUNG</h1>
 <div id="product_list">
- 
  <table>
     <% @products.each do |product| %>
         <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
