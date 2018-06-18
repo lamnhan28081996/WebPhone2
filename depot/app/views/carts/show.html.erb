@@ -1,6 +1,8 @@
-<p id="notice"><%= notice %></p>
-<h2>Your cart</h2>
+<!--<%= notice %>
+ <h2>Your cart</h2>
 <table>
+	<%= render(@cart.line_items) %>
+
     <% @cart.line_items.each do |item| %>
         <tr>
             <td><%= item.quantity %> x </td>
@@ -14,11 +16,14 @@
         <td class="total_cell"><%= number_to_currency(@cart.total_price) %></td>
     </tr>
 </table>
-
+ 
 <%= button_to 'Empty cart', 
               @cart, 
               :method => :delete,
               data: {:confirm => 'Are you sure?'} %>
 
-<!--<%= link_to 'Edit', edit_cart_path(@cart) %> |
-	<%= link_to 'Back', carts_path %> -->
+<%= link_to 'Edit', edit_cart_path(@cart) %> |
+<%= link_to 'Back', carts_path %> 
+ -->
+<!--<p id="notice"><%= notice %></p>	-->
+<%= render @cart %>
